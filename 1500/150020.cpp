@@ -30,16 +30,27 @@ const int N = 1e6 + 5;
   
 
 void shiv(){
-  
+  int n; cin>>n;;
+  vi arr(n);
+  ll sum=0;
+  for(int i=0;i<n;i++){
+    cin>>arr[i];
+    sum+=arr[i];
+  }
+  int mx=*max_element(arr.begin(),arr.end());
+
+  if(sum%2!=0 || mx>sum-mx) cout<<"NO"<<endl;
+  else cout<<"YES"<<endl;
     }
 
 
 int main(){
     fastio;
-    int t;
-    cin>>t;
-    while(t--){
+    // int t;
+    // cin>>t;
+    // while(t--){
         shiv();
-    }
+    // }
     return 0;
 }
+
