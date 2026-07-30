@@ -1,0 +1,1 @@
+{"name":"Local: Dijkstra","url":"/home/shiv/TLE 31 SHEET/Graph/Dijkstra.cpp","tests":[{"id":1785174755876,"input":"5 6\n1 2 4\n1 3 2\n2 3 1\n2 4 5\n3 4 8\n4 5 2","output":"2\n18\n10\n11\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/shiv/TLE 31 SHEET/Graph/Dijkstra.cpp","group":"local","local":true}
