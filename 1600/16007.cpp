@@ -30,10 +30,24 @@ constexpr int MOD = 1e9 + 7;
 constexpr int MOD2 = 998244353;
 constexpr int MAXN = 300005;
 
+map<pair<int,int>,ll> dp;
 
+ll f(int r,int c){
+    if(c<1 || c>r || r<1) return 0;
+    if(dp.count({r,c})) return dp[{r,c}];
+
+    ll id = 1LL*r*(r-1)/2 + c;
+    return dp[{r,c}] = id*id + f(r-1,c-1) + f(r-1,c) - f(r-2,c-1);
+}
 void shiv()
 {
-  
+   ll n; cin >> n;
+
+        int r = (sqrt(8.0*n+1)-1)/2;
+        while(1LL*r*(r+1)/2 < n) r++;
+        int c = n - 1LL*r*(r-1)/2;
+
+        cout << f(r,c) << '\n';
 }
 int main()
 {

@@ -33,6 +33,30 @@ constexpr int MAXN = 300005;
 
 void shiv()
 {
+    int n; cin>>n;
+    vl arr(n);
+    for(int i=0;i<n;i++) cin>>arr[i];
+     sort(all(arr));
+
+        if (arr.front() == 0 && arr.back() == 0) {
+            cout << "No\n";
+            return;
+        }
+
+        vl ans;
+        int l = 0, r = n - 1;
+        ll sum = 0;
+
+        while (l <= r) {
+            if (sum >= 0)
+                sum += arr[l], ans.psb(arr[l++]);
+            else
+                sum += arr[r], ans.psb(arr[r--]);
+        }
+
+        cout << "Yes\n";
+        for (ll x : ans) cout << x << " ";
+        cout << "\n";
   
 }
 int main()

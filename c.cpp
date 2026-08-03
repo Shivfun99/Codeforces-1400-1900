@@ -31,10 +31,54 @@ constexpr int MOD2 = 998244353;
 constexpr int MAXN = 300005;
 
 
+map<vector<int>, ll> dp;
+
+ll solve(vector<int> arr)
+{
+    if (arr.empty()) return 0;
+
+    if (dp.count(arr))
+        return dp[arr];
+
+    ll ans = 0;
+    set<int> vis;
+
+    for (int x : arr)
+    {
+        if (vis.count(x)) continue;
+        vis.insert(x);
+
+        int l = -1, r = -1;
+        for (int i = 0; i < arr.size(); i++)
+        {
+            if (arr[i] == x)
+            {
+                if (l == -1) l = i;
+                r = i;
+            }
+        }
+
+        vector<int> nxt;
+        for (int i = 0; i < l; i++) nxt.push_back(arr[i]);
+        for (int i = r + 1; i < arr.size(); i++) nxt.push_back(arr[i]);
+
+        ll len = r - l + 1;
+        ans = max(ans, len * len + solve(nxt));
+    }
+
+    return dp[arr] = ans;
+}
 void shiv()
 {
-  
+     int n;
+        cin >> n;
+        int k=2*n;
+        vi arr(k);
+        for (int i = 0; i < k; i++) cin >> arr[i];
+            cout << solve(arr) <<endl;
 }
+
+
 int main()
 {
     fastio;

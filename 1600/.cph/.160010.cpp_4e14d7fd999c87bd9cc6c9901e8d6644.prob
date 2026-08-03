@@ -1,0 +1,1 @@
+{"name":"Local: 160010","url":"/home/shiv/TLE 31 SHEET/1600/160010.cpp","tests":[{"id":1785749491941,"input":"4\n5\nhello\n10\ncodeforces\n5\neevee\n6\nappall\n","output":"1\nhelno\n2\ncodefofced\n1\neeeee\n0\nappall\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/shiv/TLE 31 SHEET/1600/160010.cpp","group":"local","local":true}

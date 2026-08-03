@@ -28,18 +28,34 @@ const int MAXP = 32000;
 const int N = 1e6 + 5;
 
   
-
+const int m=998244353;
 void shiv(){
+  int n; cin>>n;
+  vi arr(n);
   
+  for(int i=0;i<n;i++) cin>>arr[i];
+  ll ans=0;
+ 
+    for(int b=0;b<31;b++){
+        ll cnt[2]={1,0},sum[2]={0,0};
+        int p=0;
+
+        for(int i=0;i<n;i++){
+            p^=(arr[i]>>b)&1;
+            int o=p^1;
+            ans=(ans+((cnt[o]*(i+1)-sum[o])%m+m)%m*((1LL<<b)%m))%m;
+            cnt[p]++;
+            sum[p] = (sum[p] + i + 1) % m;
+        }
     }
-
-
+cout << ans%m << endl;
+}
 int main(){
     fastio;
-    int t;
-    cin>>t;
-    while(t--){
+    // int t;
+    // cin>>t;
+    // while(t--){
         shiv();
-    }
+    // }
     return 0;
 }
